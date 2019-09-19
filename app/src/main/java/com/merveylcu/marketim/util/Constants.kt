@@ -7,4 +7,10 @@ class Constants {
         var password = "2019ADev"
     }
 
+    object Preferences {
+        var userCredentials = "MarketimUserCredentials"
+        var username = "username"
+        var password = "password"
+    }
+
 }
