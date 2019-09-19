@@ -57,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/username"
                 android:inputType="text"
+                android:text="@={viewModel.username}"
                 android:textColor="@android:color/black"
                 android:textCursorDrawable="@null" />
 
@@ -86,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:text="@={viewModel.password}"
                 android:textColor="@android:color/black"
                 android:textCursorDrawable="@null" />
 
@@ -109,6 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:onClick="@{viewModel::login}"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
