@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_date"
@@ -43,11 +43,12 @@
 
         <View
             android:id="@+id/view"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:background="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_month"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,8 +62,20 @@
             android:text="@{order.marketName}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_group_indicator"
             app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_group_indicator"
+            android:layout_width="12dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/arrow_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_market_name"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -88,6 +101,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:gravity="end"
+            android:text="@{Double.toString(order.productPrice)}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,25 +110,27 @@
 
         <ImageView
             android:id="@+id/iv_product_state"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
+            android:scaleType="centerInside"
             app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/tv_order_name" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_product_state"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="16dp"
             android:text="@{order.productState}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_product_state"
             app:layout_constraintTop_toBottomOf="@+id/tv_order_name" />
