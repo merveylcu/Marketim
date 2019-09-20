@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.merveylcu.marketim.view.orders.OrdersViewModel" />
+            type="com.merveylcu.marketim.view.order.OrdersViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,12 +33,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="10dp"
-            android:adapter="@{viewModel.orderListAdapter}"
             android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"
             app:layout_constraintBottom_toTopOf="@+id/btn_orders"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            bind:adapter_order_list="@{viewModel.orderList}" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_orders"

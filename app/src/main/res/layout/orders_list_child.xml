@@ -6,7 +6,7 @@
 
         <variable
             name="productDetail"
-            type="com.merveylcu.marketim.model.ProductDetail" />
+            type="com.merveylcu.marketim.data.model.ProductDetail" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

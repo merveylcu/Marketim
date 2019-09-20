@@ -10,7 +10,7 @@ import com.merveylcu.marketim.R
 import com.merveylcu.marketim.databinding.ActivityLoginBinding
 import com.merveylcu.marketim.util.Util
 import com.merveylcu.marketim.view.login.LoginScreenResult.*
-import com.merveylcu.marketim.view.orders.OrdersActivity
+import com.merveylcu.marketim.view.order.OrdersActivity
 
 class LoginActivity : AppCompatActivity() {
 

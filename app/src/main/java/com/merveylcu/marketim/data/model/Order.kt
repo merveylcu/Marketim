@@ -1,4 +1,4 @@
-package com.merveylcu.marketim.model
+package com.merveylcu.marketim.data.model
 
 data class Order(val date: String,
                  var month: String,

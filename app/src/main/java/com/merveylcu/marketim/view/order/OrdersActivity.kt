@@ -1,11 +1,13 @@
-package com.merveylcu.marketim.view.orders
+package com.merveylcu.marketim.view.order
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.merveylcu.marketim.R
 import com.merveylcu.marketim.databinding.ActivityOrdersBinding
+import com.merveylcu.marketim.util.Util
 
 class OrdersActivity : AppCompatActivity() {
 
@@ -26,7 +28,11 @@ class OrdersActivity : AppCompatActivity() {
     }
 
     private fun listenEvents() {
-
+        ordersViewModel.toastMessage.observe(this, Observer { stringResId ->
+            stringResId.let {
+                Util.showToast(this, stringResId)
+            }
+        })
     }
 
 }
