@@ -13,4 +13,8 @@ class Constants {
         var password = "password"
     }
 
+    object Urls {
+        var baseUrl = "http://kariyertechchallenge.mockable.io/"
+    }
+
 }

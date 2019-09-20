@@ -1,4 +1,4 @@
-package com.merveylcu.marketim.view.orders
+package com.merveylcu.marketim.view.order
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.databinding.DataBindingUtil
 import com.merveylcu.marketim.R
 import com.merveylcu.marketim.databinding.OrdersListChildBinding
 import com.merveylcu.marketim.databinding.OrdersListGroupBinding
-import com.merveylcu.marketim.model.Order
-import com.merveylcu.marketim.model.ProductDetail
+import com.merveylcu.marketim.data.model.Order
+import com.merveylcu.marketim.data.model.ProductDetail
 
 class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandableListAdapter() {
 

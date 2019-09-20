@@ -9,4 +9,6 @@
     <string name="wrong_user_info">Kullanıcı adı veya şifre hatalı</string>
     <string name="orders">Siparişlerim</string>
     <string name="logout">Çıkış Yap</string>
+    <string name="problem_has_occurred">Bir sorun oluştu</string>
+    <string name="not_found_network_conn">İnternet bağlantısı bulunamadı</string>
 </resources>

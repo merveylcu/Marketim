@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.merveylcu.marketim.util.SharedPref
-import com.merveylcu.marketim.view.orders.OrdersActivity
+import com.merveylcu.marketim.view.order.OrdersActivity
 
 class SessionControlActivity : AppCompatActivity() {
 

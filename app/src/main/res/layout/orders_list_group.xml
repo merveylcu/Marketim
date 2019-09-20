@@ -6,7 +6,7 @@
 
         <variable
             name="order"
-            type="com.merveylcu.marketim.model.Order" />
+            type="com.merveylcu.marketim.data.model.Order" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
