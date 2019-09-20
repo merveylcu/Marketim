@@ -7,4 +7,6 @@
     <string name="login">Giriş</string>
     <string name="empty_info">Kullanıcı adı veya şifre boş bırakılamaz</string>
     <string name="wrong_user_info">Kullanıcı adı veya şifre hatalı</string>
+    <string name="orders">Siparişlerim</string>
+    <string name="logout">Çıkış Yap</string>
 </resources>
