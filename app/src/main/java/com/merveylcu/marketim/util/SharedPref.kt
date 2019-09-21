@@ -24,4 +24,8 @@ class SharedPref constructor(var context: Context) {
             editor.commit()
         }
 
+    fun clearCredentials() {
+        credentialsPreferencesEditor.clear().commit()
+    }
+
 }

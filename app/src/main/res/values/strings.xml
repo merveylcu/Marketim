@@ -11,4 +11,9 @@
     <string name="logout">Çıkış Yap</string>
     <string name="problem_has_occurred">Bir sorun oluştu</string>
     <string name="not_found_network_conn">İnternet bağlantısı bulunamadı</string>
+    <string name="product_state">Ürün Durumu</string>
+    <string name="group_indicator">Grup Göstergesi</string>
+    <string name="dialog_title_logout">Çıkış yapmak istiyor musunuz?</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
 </resources>
