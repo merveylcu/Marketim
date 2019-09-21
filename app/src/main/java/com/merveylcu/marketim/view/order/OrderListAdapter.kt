@@ -6,15 +6,15 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import androidx.databinding.DataBindingUtil
 import com.merveylcu.marketim.R
-import com.merveylcu.marketim.databinding.OrdersListChildBinding
-import com.merveylcu.marketim.databinding.OrdersListGroupBinding
+import com.merveylcu.marketim.databinding.OrderListChildBinding
+import com.merveylcu.marketim.databinding.OrderListGroupBinding
 import com.merveylcu.marketim.data.model.Order
 import com.merveylcu.marketim.data.model.ProductDetail
 
-class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandableListAdapter() {
+class OrderListAdapter(private val orderList: ArrayList<Order>) : BaseExpandableListAdapter() {
 
     override fun getGroup(groupPosition: Int): Order {
-        return ordersList[groupPosition]
+        return orderList[groupPosition]
     }
 
     override fun isChildSelectable(groupPosition: Int, childPosititon: Int): Boolean {
@@ -26,9 +26,9 @@ class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandabl
     }
 
     override fun getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View?, parent: ViewGroup): View? {
-        var binding: OrdersListGroupBinding? = convertView?.let { DataBindingUtil.getBinding(it) }
+        var binding: OrderListGroupBinding? = convertView?.let { DataBindingUtil.getBinding(it) }
         if (binding == null) {
-            binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.orders_list_group, parent, false)
+            binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.order_list_group, parent, false)
         }
         binding?.orderItem = getGroup(groupPosition)
         binding?.executePendingBindings()
@@ -40,7 +40,7 @@ class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandabl
     }
 
     override fun getChild(groupPosition: Int, childPosititon: Int): ProductDetail {
-        return ordersList[groupPosition].productDetail
+        return orderList[groupPosition].productDetail
     }
 
     override fun getGroupId(groupPosition: Int): Long {
@@ -48,9 +48,9 @@ class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandabl
     }
 
     override fun getChildView(groupPosition: Int, childPosititon: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup): View? {
-        var binding: OrdersListChildBinding? = convertView?.let { DataBindingUtil.getBinding(it) }
+        var binding: OrderListChildBinding? = convertView?.let { DataBindingUtil.getBinding(it) }
         if (binding == null) {
-            binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.orders_list_child, parent, false)
+            binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.order_list_child, parent, false)
         }
         binding?.productDetail = getChild(groupPosition, childPosititon)
         binding?.executePendingBindings()
@@ -62,7 +62,7 @@ class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandabl
     }
 
     override fun getGroupCount(): Int {
-        return ordersList.size
+        return orderList.size
     }
 
 }

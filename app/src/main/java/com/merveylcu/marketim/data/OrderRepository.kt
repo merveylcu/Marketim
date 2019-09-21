@@ -9,7 +9,7 @@ import com.merveylcu.marketim.service.WebService
 import com.merveylcu.marketim.util.Util
 import com.merveylcu.marketim.util.runOnIoThread
 
-class Repository(private val context: Context) {
+class OrderRepository(private val context: Context) {
 
     private val webService = WebService.getInstance()
 
