@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.20" />
+            app:layout_constraintGuide_percent="0.1" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_order_detail"
@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="end|center"
+            android:text="@{Double.toString(productDetail.summaryPrice)}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
