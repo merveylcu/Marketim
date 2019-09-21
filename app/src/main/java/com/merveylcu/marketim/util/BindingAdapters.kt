@@ -1,5 +1,6 @@
 package com.merveylcu.marketim.util
 
+import android.text.format.DateFormat
 import android.widget.ExpandableListView
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,6 +11,8 @@ import com.merveylcu.marketim.R
 import com.merveylcu.marketim.data.model.Order
 import com.merveylcu.marketim.data.model.ProductState.*
 import com.merveylcu.marketim.view.order.OrderListAdapter
+import java.text.SimpleDateFormat
+import java.util.*
 
 @BindingAdapter("adapter_order_list")
 fun setAdapterOrderList(expandableListView: ExpandableListView, orderList: MutableLiveData<ArrayList<Order>>) {
@@ -18,6 +21,14 @@ fun setAdapterOrderList(expandableListView: ExpandableListView, orderList: Mutab
         expandableListView.setAdapter(adapter)
         adapter.notifyDataSetChanged()
     }
+}
+
+@BindingAdapter("text_month")
+fun setTextMonth(textView: TextView, integerMonth: String) {
+    val dateFormatForIntegerMonth = SimpleDateFormat("MM", Locale("tr"))
+    val monthDate = dateFormatForIntegerMonth.parse(integerMonth)
+    val monthString = DateFormat.format("MMMM", monthDate) as String
+    textView.text = monthString
 }
 
 @BindingAdapter("icon_product_state")
