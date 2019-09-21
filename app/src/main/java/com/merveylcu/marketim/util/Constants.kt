@@ -7,7 +7,7 @@ class Constants {
         var password = "2019ADev"
     }
 
-    object Preferences {
+    object SharedPref {
         var userCredentials = "MarketimUserCredentials"
         var username = "username"
         var password = "password"

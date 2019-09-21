@@ -3,4 +3,7 @@
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">
         @android:color/darker_gray
     </color>
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF9800</color>
+    <color name="red">#F44336</color>
 </resources>

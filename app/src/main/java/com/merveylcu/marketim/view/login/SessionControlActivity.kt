@@ -21,6 +21,6 @@ class SessionControlActivity : AppCompatActivity() {
 
         startActivity(intent)
         finish()
-
     }
+
 }
