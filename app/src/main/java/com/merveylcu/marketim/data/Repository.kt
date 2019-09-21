@@ -22,7 +22,7 @@ class Repository(private val context: Context) {
                     orderList.postValue(it)
                     iServiceResponse.serviceResponseSuccessful()
                 } ?: also {
-                    iServiceResponse.serviceResponseFail(ErrorType.PROBLEM_HAS_OCURRED)
+                    iServiceResponse.serviceResponseFail(ErrorType.PROBLEM_HAS_OCCURRED)
                 }
             }
         } else {

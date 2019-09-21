@@ -30,7 +30,7 @@ class OrderListAdapter(private val ordersList: ArrayList<Order>) : BaseExpandabl
         if (binding == null) {
             binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.orders_list_group, parent, false)
         }
-        binding?.order = getGroup(groupPosition)
+        binding?.orderItem = getGroup(groupPosition)
         binding?.executePendingBindings()
         return binding?.root
     }
