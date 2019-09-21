@@ -37,10 +37,10 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center|top"
-            android:text="@{orderItem.month}"
             android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_date"
+            bind:text_month="@{orderItem.month}" />
 
         <View
             android:id="@+id/view"
@@ -128,8 +128,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
-            android:gravity="bottom"
             android:layout_marginBottom="16dp"
+            android:gravity="bottom"
             android:text="@{orderItem.productState}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
