@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="end|center"
-            android:text="@{Double.toString(productDetail.summaryPrice)}"
+            android:text="@{Double.toString(productDetail.summaryPrice) + `TL`}"
             android:textColor="@android:color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
