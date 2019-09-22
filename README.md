@@ -11,8 +11,6 @@ Bu projede;
 
 kullanılmıştır.
 
-***
-
 Uygulama ekran görüntüleri;
 
 ![Login Screen](screenshots/login_screen.png)
@@ -20,9 +18,9 @@ Uygulama ekran görüntüleri;
 </br>
 ![Orders Screen 2](screenshots/orders_screen2.png)
 ![Orders Screen 3](screenshots/orders_screen3.png)
-
 </br>
-***
 
-##İletişim
-Merve Yolcu - merveylcu@gmail.com
+#İletişim
+Merve Yolcu
+</br>
+<merveylcu@gmail.com>
