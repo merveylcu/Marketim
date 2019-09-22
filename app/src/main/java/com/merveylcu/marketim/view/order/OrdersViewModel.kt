@@ -15,14 +15,24 @@ class OrdersViewModel(application: Application) : AndroidViewModel(application),
     var logoutCallback = MutableLiveData<Boolean>()
     var orderList: MutableLiveData<ArrayList<Order>> = OrderRepository(getApplication()).getOrderList(this)
 
+    /**
+     * servisten olumlu cevap alınması durumunda çalışır.
+     */
     override fun serviceResponseSuccessful() {
 
     }
 
+    /**
+     * servisten olumsuz cevap alınması durumunda çalışır.
+     */
     override fun serviceResponseFail(errorType: ErrorType) {
         toastMessage.postValue(errorType.getStringResId())
     }
 
+    /**
+     * çıkış yap butonuna basılması durumunda çalışır.
+     * logoutCallback verisini tetikler.
+     */
     fun logout(view: View) {
         logoutCallback.postValue(true)
     }

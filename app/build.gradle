@@ -33,12 +33,16 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
-    implementation 'com.google.android.material:material:1.1.0-alpha10'
 
-    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:2.1.0" //liveData kullanımı için
+
+    //material
+    implementation 'com.google.android.material:material:1.1.0-alpha10' //tasarımların material design yapılması için
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.5.0" //web servis isteklerinin yapılması için
     implementation "com.squareup.retrofit2:converter-gson:2.3.0"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
