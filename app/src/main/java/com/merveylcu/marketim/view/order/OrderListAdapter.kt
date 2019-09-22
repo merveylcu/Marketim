@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import androidx.databinding.DataBindingUtil
 import com.merveylcu.marketim.R
-import com.merveylcu.marketim.databinding.OrderListChildBinding
-import com.merveylcu.marketim.databinding.OrderListGroupBinding
 import com.merveylcu.marketim.data.model.Order
 import com.merveylcu.marketim.data.model.ProductDetail
+import com.merveylcu.marketim.databinding.OrderListChildBinding
+import com.merveylcu.marketim.databinding.OrderListGroupBinding
 
 class OrderListAdapter(private val orderList: ArrayList<Order>) : BaseExpandableListAdapter() {
 
@@ -25,6 +25,9 @@ class OrderListAdapter(private val orderList: ArrayList<Order>) : BaseExpandable
         return false
     }
 
+    /**
+     * order_list_group arayüzüne orderItem verisinin binding edilmesi.
+     */
     override fun getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View?, parent: ViewGroup): View? {
         var binding: OrderListGroupBinding? = convertView?.let { DataBindingUtil.getBinding(it) }
         if (binding == null) {
@@ -47,6 +50,9 @@ class OrderListAdapter(private val orderList: ArrayList<Order>) : BaseExpandable
         return groupPosition.toLong()
     }
 
+    /**
+     * order_list_child arayüzüne productDetail verisinin binding edilmesi.
+     */
     override fun getChildView(groupPosition: Int, childPosititon: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup): View? {
         var binding: OrderListChildBinding? = convertView?.let { DataBindingUtil.getBinding(it) }
         if (binding == null) {

@@ -21,6 +21,9 @@ class OrdersActivity : AppCompatActivity() {
         listenEvents()
     }
 
+    /**
+     * activity_orders arayüzünün OrdersViewModel ile binding edilmesi.
+     */
     private fun setupBinding(): OrdersViewModel {
         val binding = DataBindingUtil.setContentView<ActivityOrdersBinding>(this, R.layout.activity_orders)
         val viewModel = ViewModelProviders.of(this).get(OrdersViewModel::class.java)
@@ -29,6 +32,9 @@ class OrdersActivity : AppCompatActivity() {
         return viewModel
     }
 
+    /**
+     * OrdersViewModel'de bulunan liveData'ların observe edildiği methoddur.
+     */
     private fun listenEvents() {
         ordersViewModel.toastMessage.observe(this, Observer { stringResId ->
             stringResId.let {
@@ -40,6 +46,11 @@ class OrdersActivity : AppCompatActivity() {
         })
     }
 
+    /**
+     * Kullanıcıya alertDialog ile çıkış yapılıp yapılmayacağını soran methoddur.
+     * Eğer evet seçilirse SharedPref sınıfında saklanan kullanıcı bilgileri temizlenir,
+     * uygulamadan çıkış yapılır.
+     */
     private fun showLogoutDialog() {
         AlertDialog.Builder(this)
                 .setMessage(resources.getString(R.string.dialog_title_logout))

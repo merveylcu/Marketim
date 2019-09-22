@@ -22,6 +22,9 @@ class LoginActivity : AppCompatActivity() {
         listenEvents()
     }
 
+    /**
+     * activity_login arayüzünün LoginViewModel ile binding edilmesi.
+     */
     private fun setupBinding(): LoginViewModel {
         val binding = DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
         val viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
@@ -30,6 +33,9 @@ class LoginActivity : AppCompatActivity() {
         return viewModel
     }
 
+    /**
+     * LoginViewModel'de bulunan liveData'ların observe edildiği methoddur.
+     */
     private fun listenEvents() {
         loginViewModel.loginScreenResult.observe(this, Observer { loginScreenResult ->
             when (loginScreenResult) {

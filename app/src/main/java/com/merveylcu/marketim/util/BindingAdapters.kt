@@ -23,6 +23,10 @@ fun setAdapterOrderList(expandableListView: ExpandableListView, orderList: Mutab
     }
 }
 
+/**
+ * gelen integer ay formatı string ay formatına çevrilerek textView'e setlenir.
+ * Örneğin; gelen "09" ay bilgisi "Eylül" olarak setlenir.
+ */
 @BindingAdapter("text_month")
 fun setTextMonth(textView: TextView, integerMonth: String) {
     val dateFormatForIntegerMonth = SimpleDateFormat("MM", Locale("tr"))

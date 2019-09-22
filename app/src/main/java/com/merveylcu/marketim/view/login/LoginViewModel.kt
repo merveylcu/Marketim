@@ -15,10 +15,14 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val password = MutableLiveData<String>()
     val loginScreenResult = MutableLiveData<LoginScreenResult>()
 
+    /**
+     * giriş yap butonuna basılması durumunda çalışır.
+     * gerekli kontrollere göre loginScreenResult değerini setler.
+     */
     fun onClickedLogin(view: View) {
         multiLet(username.value, password.value) { username, password ->
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                if (isRightLoginInfo()) {
+                if (isCorrectLoginInfo()) {
                     loginScreenResult.postValue(SUCCESSFUL)
                 } else {
                     loginScreenResult.postValue(WRONG_USER_INFO)
@@ -31,8 +35,13 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    /**
+     * beni hatırla switch'i açılıp kapandığında çalışır.
+     * switch açıksa ve girilen username ve password doğru ise bilgiler,
+     * SharedPref sınıfına gönderilerek burada saklanır.
+     */
     fun onCheckedChangedRememberMe(view: View, isChecked: Boolean) {
-        if (isChecked && isRightLoginInfo()) {
+        if (isChecked && isCorrectLoginInfo()) {
             multiLet(username.value, password.value) { username, password ->
                 val sharedPref = SharedPref(view.context)
                 sharedPref.username = username
@@ -41,12 +50,15 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    private fun isRightLoginInfo(): Boolean {
-        var isRight = false
+    /**
+     * girilen username ve password doğruluğunun kontrolünü yapar.
+     */
+    private fun isCorrectLoginInfo(): Boolean {
+        var isCorrect = false
         multiLet(username.value, password.value) { username, password ->
-            isRight = username == Constants.Session.username && password == Constants.Session.password
+            isCorrect = username == Constants.Session.username && password == Constants.Session.password
         }
-        return isRight
+        return isCorrect
     }
 
 }

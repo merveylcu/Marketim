@@ -13,6 +13,10 @@ class OrderRepository(private val context: Context) {
 
     private val webService = WebService.getInstance()
 
+    /**
+     * Servisten alınan orderList array'i MutableLiveData olarak setlenir ve geri döndürülür.
+     * Gelen cevaba göre iServiceResponse methodları çağrılır.
+     */
     fun getOrderList(iServiceResponse: IServiceResponse): MutableLiveData<ArrayList<Order>> {
         val orderList = MutableLiveData<ArrayList<Order>>()
         if (Util.isConnectedToInternet(context)) {
