@@ -21,7 +21,6 @@ Uygulama ekran görüntüleri;
 </br>
 
 ## İletişim
-</br>
 Merve Yolcu
 </br>
 <merveylcu@gmail.com>
